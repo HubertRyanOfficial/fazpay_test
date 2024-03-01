@@ -34,7 +34,7 @@ export function UserProvider({ children }: AuthContextProps) {
 
   return (
     <AuthContext.Provider value={null}>
-      {!loading ? children : <span>loading</span>}
+      {!loading ? children : null}
       <Toaster />
     </AuthContext.Provider>
   );
