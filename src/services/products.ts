@@ -24,3 +24,8 @@ export const putProduct = async (id: string, data: BaseProduct) => {
   await api.put(`/products/${id}`, JSON.stringify(data));
   return;
 };
+
+export const deleteProduct = async (id: string) => {
+  await api.delete(`/products/${id}`);
+  return;
+};

@@ -44,6 +44,7 @@ import { Product } from "@/services/products";
 import { CreateDialogTrigger } from "./CreateDialogTrigger";
 import { EditDialogTrigger } from "./EditDialogTrigger";
 import { DialogTrigger } from "@/components/ui/dialog";
+import EditDropdown from "./EditDropdown";
 
 export default function ContentsList() {
   const { products: data } = useDashboard();
@@ -259,27 +260,7 @@ export const columns: ColumnDef<Product>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      return (
-        <EditDialogTrigger product={row.original}>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="h-8 w-8 p-0">
-                <span className="sr-only">Open menu</span>
-                <DotsHorizontalIcon className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-              <DialogTrigger className="w-full">
-                <DropdownMenuItem onClick={() => {}}>Edit</DropdownMenuItem>
-              </DialogTrigger>
-              <DropdownMenuItem onClick={() => {}} className="text-red-500">
-                Delete
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </EditDialogTrigger>
-      );
+      return <EditDropdown product={row.original} />;
     },
   },
 ];
