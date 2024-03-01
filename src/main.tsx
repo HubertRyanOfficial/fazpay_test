@@ -6,6 +6,7 @@ import "./index.css";
 
 import Auth from "./routes/Main";
 import Dashboard from "./routes/Dashboard";
+import { DashboardProvider } from "./contexts/DashboardContext";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <UserProvider>
-    <RouterProvider router={router} />
+    <DashboardProvider>
+      <RouterProvider router={router} />
+    </DashboardProvider>
   </UserProvider>
 );
