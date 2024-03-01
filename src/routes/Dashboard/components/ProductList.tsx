@@ -2,7 +2,6 @@ import * as React from "react";
 import {
   CaretSortIcon,
   ChevronDownIcon,
-  DotsHorizontalIcon,
   PlusIcon,
 } from "@radix-ui/react-icons";
 import {
@@ -24,8 +23,6 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
@@ -37,14 +34,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { CreateDialogTrigger } from "./CreateDialogTrigger";
+
 import { useDashboard } from "@/contexts/DashboardContext";
 
 import dayjs from "dayjs";
-import { Product } from "@/services/products";
-import { CreateDialogTrigger } from "./CreateDialogTrigger";
-import { EditDialogTrigger } from "./EditDialogTrigger";
-import { DialogTrigger } from "@/components/ui/dialog";
 import EditDropdown from "./EditDropdown";
+import { Product } from "@/services/products";
 
 export default function ContentsList() {
   const { products: data } = useDashboard();
