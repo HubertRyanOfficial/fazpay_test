@@ -11,7 +11,8 @@ import { Button } from "@/components/ui/button";
 import { EditDialogTrigger } from "./EditDialogTrigger";
 import { DialogTrigger } from "@/components/ui/dialog";
 
-import { Product, deleteProduct } from "@/services/products";
+import { deleteProduct } from "@/services/products";
+import type { Product } from "@/services/types";
 import { useCallback, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useDashboard } from "@/contexts/DashboardContext";

@@ -40,7 +40,7 @@ import { useDashboard } from "@/contexts/DashboardContext";
 
 import dayjs from "dayjs";
 import EditDropdown from "./EditDropdown";
-import { Product } from "@/services/products";
+import { Product } from "@/services/types";
 
 export default function ContentsList() {
   const { products: data } = useDashboard();

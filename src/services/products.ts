@@ -1,14 +1,5 @@
 import api from "@/constants/api";
-
-interface BaseProduct {
-  name: string;
-  price: string;
-}
-
-export interface Product extends BaseProduct {
-  id: string;
-  createdAt: string;
-}
+import { BaseProduct, Product } from "./types";
 
 export const getProducts = async () => {
   const response = await api.get<Product[]>(`/products`);

@@ -11,7 +11,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useDashboard } from "@/contexts/DashboardContext";
-import { Product, postProduct, putProduct } from "@/services/products";
+import { postProduct, putProduct } from "@/services/products";
+import type { Product } from "@/services/types";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { memo, useCallback, useState } from "react";
 

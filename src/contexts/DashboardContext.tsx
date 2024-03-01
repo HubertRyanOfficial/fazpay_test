@@ -8,7 +8,8 @@ import {
   useState,
 } from "react";
 import { Toaster } from "@/components/ui/toaster";
-import { Product, getProducts } from "@/services/products";
+import type { Product } from "@/services/types";
+import { getProducts } from "@/services/products";
 
 interface DashboardContextProps {
   children: React.ReactNode;
