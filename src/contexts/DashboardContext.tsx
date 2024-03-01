@@ -17,6 +17,7 @@ interface DashboardContextProps {
 interface DashboardContextType {
   products: Product[];
   loading: boolean;
+  refreshProduct: () => Promise<void>;
 }
 
 const DashboardContext = createContext<DashboardContextType>({} as any);
@@ -40,7 +41,9 @@ export function DashboardProvider({ children }: DashboardContextProps) {
   }, []);
 
   return (
-    <DashboardContext.Provider value={{ products, loading }}>
+    <DashboardContext.Provider
+      value={{ products, loading, refreshProduct: handleGetProducts }}
+    >
       {children}
       <Toaster />
     </DashboardContext.Provider>

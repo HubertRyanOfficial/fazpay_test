@@ -26,7 +26,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
@@ -39,9 +38,12 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useDashboard } from "@/contexts/DashboardContext";
+
 import dayjs from "dayjs";
-import cn from "classnames";
-import { Product, postProduct } from "@/services/products";
+import { Product } from "@/services/products";
+import { CreateDialogTrigger } from "./CreateDialogTrigger";
+import { EditDialogTrigger } from "./EditDialogTrigger";
+import { DialogTrigger } from "@/components/ui/dialog";
 
 export default function ContentsList() {
   const { products: data } = useDashboard();
@@ -85,9 +87,11 @@ export default function ContentsList() {
           className="md:max-w-sm sm:w-full"
         />
         <div className="flex md:flex-row md:justify-end md:mt-0 min-[300px]:justify-between min-[300px]:w-full min-[300px]:mt-4 ">
-          <Button className="mr-2" onClick={() => {}}>
-            Create a new product <PlusIcon className="ml-2 h-4 w-4" />
-          </Button>
+          <CreateDialogTrigger>
+            <Button className="mr-2" onClick={() => {}}>
+              Create a new product <PlusIcon className="ml-2 h-4 w-4" />
+            </Button>
+          </CreateDialogTrigger>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline">
@@ -256,20 +260,25 @@ export const columns: ColumnDef<Product>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <DotsHorizontalIcon className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem onClick={() => {}} className="text-red-500">
-              Delete
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <EditDialogTrigger product={row.original}>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="h-8 w-8 p-0">
+                <span className="sr-only">Open menu</span>
+                <DotsHorizontalIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>Actions</DropdownMenuLabel>
+              <DialogTrigger className="w-full">
+                <DropdownMenuItem onClick={() => {}}>Edit</DropdownMenuItem>
+              </DialogTrigger>
+              <DropdownMenuItem onClick={() => {}} className="text-red-500">
+                Delete
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </EditDialogTrigger>
       );
     },
   },

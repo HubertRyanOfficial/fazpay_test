@@ -1,10 +1,11 @@
 import Loader from "@/components/Loader";
-import ContentsList from "./ContentsList";
+import ProductList from "./ProductList";
 import { useDashboard } from "@/contexts/DashboardContext";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
+import { CreateDialogTrigger } from "./CreateDialogTrigger";
 
-export default function ContentsWrapper() {
+export default function ProductWrapper() {
   const { loading, products } = useDashboard();
 
   if (loading) {
@@ -16,9 +17,11 @@ export default function ContentsWrapper() {
       <>
         <h1 className="text-5xl font-bold">Create new product</h1>
         <div className="mt-8">
-          <Button onClick={() => {}}>
-            <PlusIcon className="mr-2" /> Create Product
-          </Button>
+          <CreateDialogTrigger>
+            <Button>
+              <PlusIcon className="mr-2" /> Create Product
+            </Button>
+          </CreateDialogTrigger>
         </div>
       </>
     );
@@ -26,7 +29,7 @@ export default function ContentsWrapper() {
 
   return (
     <div className="w-full max-w-[1100px] m-auto">
-      <ContentsList />
+      <ProductList />
     </div>
   );
 }
