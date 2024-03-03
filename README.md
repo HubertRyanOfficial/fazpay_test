@@ -1,30 +1,77 @@
-# React + TypeScript + Vite
+# React Application with Vite for FazPay
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This README provides detailed instructions on how to install, configure, and run a React application using Vite. It also includes steps to run unit tests using the `npm run test` command. Be sure to follow all the steps carefully.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vite:** Vite is an extremely fast and lightweight React application builder. [More information](https://vitejs.dev/)
 
-## Expanding the ESLint configuration
+- **Firebase Authentication:** User authentication is managed using Firebase Authentication, an efficient and secure solution. [Firebase Authentication Documentation](https://firebase.google.com/docs/auth)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **API Context for State Management:** React's Context API is used to manage the global state of the application, providing an effective way to share data between components without the need for props. [React Context Documentation](https://reactjs.org/docs/context.html)
 
-- Configure the top-level `parserOptions` property like this:
+## Firebase Configuration
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. **Create a Project in Firebase:**
+
+   - Access the [Firebase Console](https://console.firebase.google.com/).
+   - Create a new project and follow the instructions to set up Firebase.
+
+2. **Authentication Configuration:**
+
+   - Enable email/password authentication in the Firebase console.
+   - Copy the credentials from your project (API Key, Auth Domain, etc.) and paste them into the Firebase configuration file (`src/firebaseConfig.js`).
+
+3. **Start the Project:**
+
+   ```bash
+   npm run dev
+   ```
+
+   The React application will run locally at `http://localhost:3000`. Open your browser and visit this address to view the application.
+
+## Prerequisites
+
+Before getting started, ensure that the following software is installed on your machine:
+
+- Node.js: [Download and Installation](https://nodejs.org/)
+- npm (Node Package Manager): Usually installed automatically with Node.js.
+
+## Installation Steps
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/your-username/fazpay-react-app.git
+   cd fazpay-react-app
+   ```
+
+2. **Install Dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+## Running the Application
+
+Now that the dependencies are installed, you can start the application. Use the following command:
+
+```bash
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The React application will run locally at `http://localhost:3000`. Open your browser and visit this address to view the application.
+
+## Running Unit Tests
+
+The application uses unit tests to ensure code quality. Run the tests using the following command:
+
+```bash
+npm run test
+```
+
+This will initiate the test execution and provide detailed results. Ensure that all tests pass before making any changes.
+
+---
+
+I hope this documentation is clear and helpful for you!
