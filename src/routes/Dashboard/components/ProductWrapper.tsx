@@ -28,8 +28,10 @@ export default function ProductWrapper() {
   }
 
   return (
-    <div className="w-full max-w-[1100px] m-auto">
-      <h1 className="my-4 text-3xl font-bold">Dashboard</h1>
+    <div className="w-full max-w-[1100px] m-auto px-4 ">
+      <h1 className="my-4 text-3xl font-bold max-[400px]:text-2xl max-[400px]:text-center max-[400px]:mt-12">
+        Dashboard
+      </h1>
       <ProductList />
     </div>
   );

@@ -74,24 +74,24 @@ export default function ContentsList() {
 
   return (
     <div className="w-full h-[600px] bg-white px-4 rounded-xl shadow-md overflow-y-auto">
-      <div className="flex justify-between items-center py-4 md:flex-row sm:flex-col">
+      <div className="flex justify-between items-center py-4 lg:flex-row flex-col">
         <Input
           placeholder="Filter name..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
-          className="md:max-w-sm sm:w-full"
+          className="lg:max-w-sm w-full"
         />
-        <div className="flex md:flex-row md:justify-end md:mt-0 min-[300px]:justify-between min-[300px]:w-full min-[300px]:mt-4 ">
+        <div className="flex justify-between mt-4 lg:mt-0 lg:justify-end max-[1024px]:w-full max-[400px]:flex-col">
           <CreateDialogTrigger>
-            <Button className="mr-2">
+            <Button className="mr-2 max-[400px]:mr-0">
               Create a new product <PlusIcon className="ml-2 h-4 w-4" />
             </Button>
           </CreateDialogTrigger>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline">
+              <Button variant="outline" className="max-[400px]:mt-2">
                 Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>

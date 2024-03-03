@@ -17,7 +17,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-white h-[6vh] px-8 flex flex-row items-center justify-end shadow-sm">
+    <header className="bg-white h-[6vh] px-8 flex flex-row items-center justify-end shadow-sm ">
       <div className="flex items-center">
         <DropdownMenu>
           <DropdownMenuTrigger>

@@ -11,7 +11,7 @@ import SignUpForm from "./components/SignUpForm";
 
 export default function Main() {
   return (
-    <div className="w-full min-h-[100vh] flex items-center justify-center">
+    <div className="w-full min-h-[100vh] flex items-center justify-center px-4">
       <Tabs defaultValue="login" className="w-[400px]">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="login">Login</TabsTrigger>
