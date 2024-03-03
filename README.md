@@ -22,14 +22,6 @@ This README provides detailed instructions on how to install, configure, and run
    - Enable email/password authentication in the Firebase console.
    - Copy the credentials from your project (API Key, Auth Domain, etc.) and paste them into the Firebase configuration file (`src/firebaseConfig.js`).
 
-3. **Start the Project:**
-
-   ```bash
-   npm run dev
-   ```
-
-   The React application will run locally at `http://localhost:3000`. Open your browser and visit this address to view the application.
-
 ## Prerequisites
 
 Before getting started, ensure that the following software is installed on your machine:
@@ -60,7 +52,7 @@ Now that the dependencies are installed, you can start the application. Use the 
 npm run dev
 ```
 
-The React application will run locally at `http://localhost:3000`. Open your browser and visit this address to view the application.
+The React application will run locally at `http://localhost:5173`. Open your browser and visit this address to view the application.
 
 ## Running Unit Tests
 
