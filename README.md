@@ -12,7 +12,7 @@ This README provides detailed instructions on how to install, configure, and run
 
 ## Firebase Configuration
 
-> Important: this project already has a firebase public config, so you can run withou problems in the first time.
+> Important: this project already has a firebase public config, so you can run without problems in the first time.
 
 1. **Create a Project in Firebase:**
 
