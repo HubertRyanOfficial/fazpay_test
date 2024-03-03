@@ -19,14 +19,14 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase-config";
 import { useState } from "react";
 
-const schema = z.object({
+export const schema = z.object({
   email: z.string().email("Enter a valid email address"),
   password: z.string().min(6, "Password must be at least 6 characters long"),
 });
 
-export default function SignUpForm() {
-  const [loading, setLoading] = useState(false);
+export default function LoginForm() {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {

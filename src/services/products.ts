@@ -7,13 +7,13 @@ export const getProducts = async () => {
 };
 
 export const postProduct = async (data: BaseProduct) => {
-  await api.post("/products", JSON.stringify(data));
-  return;
+  const response = await api.post("/products", JSON.stringify(data));
+  return response.data;
 };
 
 export const putProduct = async (id: string, data: BaseProduct) => {
-  await api.put(`/products/${id}`, JSON.stringify(data));
-  return;
+  const response = await api.put(`/products/${id}`, JSON.stringify(data));
+  return response.data;
 };
 
 export const deleteProduct = async (id: string) => {

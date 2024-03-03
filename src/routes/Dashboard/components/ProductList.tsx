@@ -85,7 +85,7 @@ export default function ContentsList() {
         />
         <div className="flex md:flex-row md:justify-end md:mt-0 min-[300px]:justify-between min-[300px]:w-full min-[300px]:mt-4 ">
           <CreateDialogTrigger>
-            <Button className="mr-2" onClick={() => {}}>
+            <Button className="mr-2">
               Create a new product <PlusIcon className="ml-2 h-4 w-4" />
             </Button>
           </CreateDialogTrigger>

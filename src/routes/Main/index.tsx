@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
 
-export default function AuthenticationRoute() {
+export default function Main() {
   return (
     <div className="w-full min-h-[100vh] flex items-center justify-center">
       <Tabs defaultValue="login" className="w-[400px]">

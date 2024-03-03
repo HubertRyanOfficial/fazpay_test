@@ -29,6 +29,7 @@ export default function ProductWrapper() {
 
   return (
     <div className="w-full max-w-[1100px] m-auto">
+      <h1 className="my-4 text-3xl font-bold">Dashboard</h1>
       <ProductList />
     </div>
   );

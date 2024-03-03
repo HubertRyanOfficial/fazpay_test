@@ -5,6 +5,7 @@ import { createContext, useCallback, useEffect, useState } from "react";
 import { auth } from "../lib/firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { Toaster } from "@/components/ui/toaster";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface AuthContextProps {
   children: React.ReactNode;
@@ -13,6 +14,8 @@ interface AuthContextProps {
 const AuthContext = createContext(null);
 
 export function UserProvider({ children }: AuthContextProps) {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,11 +24,10 @@ export function UserProvider({ children }: AuthContextProps) {
 
   const handleUser = useCallback(async () => {
     let unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log(user?.email);
-      if (user && window.location.pathname !== "/dashboard") {
-        window.history.replaceState(null, "", "/dashboard");
-      } else if (!user && window.location.pathname != "/") {
-        window.history.replaceState(null, "", "/");
+      if (user && location.pathname === "/") {
+        navigate("/dashboard");
+      } else if (!user && window.location.pathname !== "/") {
+        navigate("/");
       }
       setLoading(false);
     });
