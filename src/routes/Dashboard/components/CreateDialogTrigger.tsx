@@ -39,6 +39,8 @@ export function CreateDialogTrigger({ children }: Props) {
         title: "Product created",
         description: "Your new product was added to product list.",
       });
+      setName("");
+      setPrice("");
     } catch (error) {
       toast({
         title: "Ops!",
