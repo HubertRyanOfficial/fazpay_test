@@ -1,10 +1,5 @@
 import api from "@/constants/api";
-import {
-  deleteProduct,
-  getProducts,
-  postProduct,
-  putProduct,
-} from "@/services/products";
+import { getProducts, postProduct, putProduct } from "@/services/products";
 import MockAdapter from "axios-mock-adapter";
 
 const axiosMock = new MockAdapter(api);
